@@ -1,11 +1,11 @@
 ---
-const base = import.meta.env.BASE_URL;
+import { withBase } from "../utils/withBase";
 ---
 
 <section aria-label="Zertifikate und Trust-Badges" class="badge-grid">
   <article class="badge-card">
     <img
-      src={`${base}assets/badges/microsoft-certified-placeholder.svg`}
+      src={withBase("assets/badges/microsoft-certified-placeholder.svg")}
       width="360"
       height="120"
       alt="Platzhalter fuer Microsoft Certified Badge"
@@ -15,7 +15,7 @@ const base = import.meta.env.BASE_URL;
   </article>
   <article class="badge-card">
     <img
-      src={`${base}assets/badges/dsgvo-compliant-placeholder.svg`}
+      src={withBase("assets/badges/dsgvo-compliant-placeholder.svg")}
       width="360"
       height="120"
       alt="Platzhalter fuer DSGVO-konforme Prozesse"

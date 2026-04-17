@@ -1,8 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import { siteConfig } from "../data/site";
-
-const base = import.meta.env.BASE_URL;
+import { withBase } from "../utils/withBase";
 ---
 
 <MainLayout
@@ -19,8 +18,8 @@ const base = import.meta.env.BASE_URL;
         Privatkunden und Unternehmen.
       </p>
       <div class="btn-row" style="margin-top: 1rem;">
-        <a class="btn btn-primary" href={base}>Zur Startseite</a>
-        <a class="btn btn-secondary" href={`${base}leistungen/unternehmen/`}>
+        <a class="btn btn-primary" href={withBase("")}>Zur Startseite</a>
+        <a class="btn btn-secondary" href={withBase("leistungen/unternehmen/")}>
           Zu den Business-Leistungen
         </a>
       </div>

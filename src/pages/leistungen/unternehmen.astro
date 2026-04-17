@@ -1,8 +1,7 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
 import { siteConfig } from "../../data/site";
-
-const base = import.meta.env.BASE_URL;
+import { withBase } from "../../utils/withBase";
 ---
 
 <MainLayout
@@ -101,8 +100,8 @@ const base = import.meta.env.BASE_URL;
           Infrastruktur mit unserem Team.
         </p>
         <div class="btn-row">
-          <a class="btn btn-primary" href={`${base}#kontakt`}>Jetzt Termin vereinbaren</a>
-          <a class="btn btn-secondary" href={`${base}#kontakt`}>IT-Notaufnahme kontaktieren</a>
+          <a class="btn btn-primary" href={withBase("#kontakt")}>Jetzt Termin vereinbaren</a>
+          <a class="btn btn-secondary" href={withBase("#kontakt")}>IT-Notaufnahme kontaktieren</a>
         </div>
       </div>
     </div>

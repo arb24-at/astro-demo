@@ -1,14 +1,16 @@
 ---
 import { mainNavigation } from "../data/navigation";
 import { siteConfig } from "../data/site";
+import { withBase } from "../utils/withBase";
 
 type Props = {
   currentPath?: string;
 };
 
 const { currentPath = "/" } = Astro.props;
-const base = import.meta.env.BASE_URL;
-const toHref = (path: string) => `${base}${path}`;
+const toHref = (path: string) => withBase(path);
+const baseHref = withBase("");
+const baseNoTrailingSlash = baseHref.replace(/\/$/, "");
 
 const normalizePath = (path: string) => {
   if (!path) return "";
@@ -16,9 +18,15 @@ const normalizePath = (path: string) => {
   return noLeading.endsWith("/") ? noLeading : `${noLeading}/`;
 };
 
-const currentRelativePath = normalizePath(
-  currentPath.startsWith(base) ? currentPath.slice(base.length) : currentPath
-);
+const currentPathWithoutBase = (() => {
+  if (currentPath === baseNoTrailingSlash || currentPath === baseHref) return "";
+  if (currentPath.startsWith(`${baseNoTrailingSlash}/`)) {
+    return currentPath.slice(baseNoTrailingSlash.length + 1);
+  }
+  return currentPath.replace(/^\/+/, "");
+})();
+
+const currentRelativePath = normalizePath(currentPathWithoutBase);
 const headerNavigation = mainNavigation.filter(
   (item) => item.href !== "datensicherheit-zertifizierungen/"
 );
@@ -32,7 +40,7 @@ const isActive = (href: string) => {
 <header class="site-header" id="site-header">
   <div class="container">
     <div class="header-shell">
-      <a href={base} class="brand" aria-label={`${siteConfig.name} Startseite`}>
+      <a href={baseHref} class="brand" aria-label={`${siteConfig.name} Startseite`}>
         <span class="brand-mark">IT</span>
         <span>
           <span class="brand-name">{siteConfig.shortName}</span>
@@ -46,7 +54,7 @@ const isActive = (href: string) => {
             {item.label}
           </a>
         ))}
-        <a class="btn btn-primary nav-cta" href={`${base}#kontakt`}>Jetzt Termin vereinbaren</a>
+        <a class="btn btn-primary nav-cta" href={withBase("#kontakt")}>Jetzt Termin vereinbaren</a>
       </nav>
 
       <button
@@ -66,7 +74,7 @@ const isActive = (href: string) => {
           {item.label}
         </a>
       ))}
-      <a class="btn btn-primary" href={`${base}#kontakt`}>Jetzt Termin vereinbaren</a>
+      <a class="btn btn-primary" href={withBase("#kontakt")}>Jetzt Termin vereinbaren</a>
     </nav>
   </div>
 </header>

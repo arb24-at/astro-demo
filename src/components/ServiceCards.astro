@@ -1,5 +1,5 @@
 ---
-const base = import.meta.env.BASE_URL;
+import { withBase } from "../utils/withBase";
 ---
 
 <section class="section" id="leistungen">
@@ -24,7 +24,7 @@ const base = import.meta.env.BASE_URL;
           <li>Planbare Betreuung fuer Teams in Berlin</li>
         </ul>
         <p style="margin-top: 0.8rem;">
-          <a href={`${base}leistungen/unternehmen/`}>Zur Business-Seite</a>
+          <a href={withBase("leistungen/unternehmen/")}>Zur Business-Seite</a>
         </p>
       </article>
 
@@ -40,7 +40,7 @@ const base = import.meta.env.BASE_URL;
           <li>Verstaendliche Hilfe ohne Fachchinesisch</li>
         </ul>
         <p style="margin-top: 0.8rem;">
-          <a href={`${base}leistungen/privatpersonen/`}>Zur Privatkunden-Seite</a>
+          <a href={withBase("leistungen/privatpersonen/")}>Zur Privatkunden-Seite</a>
         </p>
       </article>
 
@@ -56,7 +56,7 @@ const base = import.meta.env.BASE_URL;
           <li>Saubere Uebergabe mit Funktionspruefung</li>
         </ul>
         <p style="margin-top: 0.8rem;">
-          <a href={`${base}leistungen/reparatur-installation/`}>Zur System-Seite</a>
+          <a href={withBase("leistungen/reparatur-installation/")}>Zur System-Seite</a>
         </p>
       </article>
     </div>
