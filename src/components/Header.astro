@@ -7,20 +7,32 @@ type Props = {
 };
 
 const { currentPath = "/" } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const toHref = (path: string) => `${base}${path}`;
+
+const normalizePath = (path: string) => {
+  if (!path) return "";
+  const noLeading = path.replace(/^\/+/, "");
+  return noLeading.endsWith("/") ? noLeading : `${noLeading}/`;
+};
+
+const currentRelativePath = normalizePath(
+  currentPath.startsWith(base) ? currentPath.slice(base.length) : currentPath
+);
 const headerNavigation = mainNavigation.filter(
-  (item) => item.href !== "/datensicherheit-zertifizierungen"
+  (item) => item.href !== "datensicherheit-zertifizierungen/"
 );
 
 const isActive = (href: string) => {
-  if (href === "/") return currentPath === "/";
-  return currentPath.startsWith(href);
+  if (href === "") return currentRelativePath === "";
+  return currentRelativePath.startsWith(normalizePath(href));
 };
 ---
 
 <header class="site-header" id="site-header">
   <div class="container">
     <div class="header-shell">
-      <a href="/" class="brand" aria-label={`${siteConfig.name} Startseite`}>
+      <a href={base} class="brand" aria-label={`${siteConfig.name} Startseite`}>
         <span class="brand-mark">IT</span>
         <span>
           <span class="brand-name">{siteConfig.shortName}</span>
@@ -30,11 +42,11 @@ const isActive = (href: string) => {
 
       <nav class="nav-desktop" aria-label="Hauptnavigation">
         {headerNavigation.map((item) => (
-          <a class={`nav-link ${isActive(item.href) ? "active" : ""}`} href={item.href}>
+          <a class={`nav-link ${isActive(item.href) ? "active" : ""}`} href={toHref(item.href)}>
             {item.label}
           </a>
         ))}
-        <a class="btn btn-primary nav-cta" href="/#kontakt">Jetzt Termin vereinbaren</a>
+        <a class="btn btn-primary nav-cta" href={`${base}#kontakt`}>Jetzt Termin vereinbaren</a>
       </nav>
 
       <button
@@ -50,11 +62,11 @@ const isActive = (href: string) => {
 
     <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile Navigation" hidden>
       {headerNavigation.map((item) => (
-        <a class={`mobile-link ${isActive(item.href) ? "active" : ""}`} href={item.href}>
+        <a class={`mobile-link ${isActive(item.href) ? "active" : ""}`} href={toHref(item.href)}>
           {item.label}
         </a>
       ))}
-      <a class="btn btn-primary" href="/#kontakt">Jetzt Termin vereinbaren</a>
+      <a class="btn btn-primary" href={`${base}#kontakt`}>Jetzt Termin vereinbaren</a>
     </nav>
   </div>
 </header>

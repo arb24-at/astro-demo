@@ -1,12 +1,14 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import { siteConfig } from "../data/site";
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <MainLayout
   title={`Seite nicht gefunden | ${siteConfig.defaultTitleSuffix}`}
   description="Die angeforderte Seite konnte nicht gefunden werden."
-  canonicalPath="/404"
+  canonicalPath="404/"
 >
   <section class="page-intro">
     <div class="container">
@@ -17,8 +19,10 @@ import { siteConfig } from "../data/site";
         Privatkunden und Unternehmen.
       </p>
       <div class="btn-row" style="margin-top: 1rem;">
-        <a class="btn btn-primary" href="/">Zur Startseite</a>
-        <a class="btn btn-secondary" href="/leistungen/unternehmen">Zu den Business-Leistungen</a>
+        <a class="btn btn-primary" href={base}>Zur Startseite</a>
+        <a class="btn btn-secondary" href={`${base}leistungen/unternehmen/`}>
+          Zu den Business-Leistungen
+        </a>
       </div>
     </div>
   </section>

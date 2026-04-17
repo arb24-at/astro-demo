@@ -1,5 +1,7 @@
 ---
 import { siteConfig } from "../data/site";
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <section class="hero">
@@ -12,8 +14,8 @@ import { siteConfig } from "../data/site";
         ueber WLAN und Arbeitsplatzsysteme bis zur strukturierten Fehlerbehebung vor Ort.
       </p>
       <div class="btn-row hero-cta-row">
-        <a class="btn btn-primary" href="#kontakt">Jetzt Termin vereinbaren</a>
-        <a class="btn btn-secondary" href="#kontakt">IT-Notaufnahme kontaktieren</a>
+        <a class="btn btn-primary" href={`${base}#kontakt`}>Jetzt Termin vereinbaren</a>
+        <a class="btn btn-secondary" href={`${base}#kontakt`}>IT-Notaufnahme kontaktieren</a>
       </div>
 
       <div class="hero-signal-row">

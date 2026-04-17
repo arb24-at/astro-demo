@@ -22,7 +22,7 @@ export const siteConfig: SiteConfig = {
   tagline: "Vor-Ort-Service fuer Privat & Business",
   defaultTitleSuffix: "BerlinTech Support",
   defaultDescription:
-    "Professioneller IT-Service in Berlin fuer Privatpersonen und Unternehmen: Vor-Ort-Support, Microsoft-Umgebungen, Reparatur, Installation und DSGVO-konforme Datensicherheit.",
+    "Professioneller IT-Service in Berlin fuer Privatpersonen und Unternehmen: Vor-Ort-Support, Microsoft-Umgebungen, Systemoptimierung, Software-Installation und DSGVO-konforme Datensicherheit.",
   serviceDistricts: [
     "Mitte",
     "Pankow",

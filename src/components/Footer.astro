@@ -4,6 +4,8 @@ import { legalNavigation, mainNavigation } from "../data/navigation";
 import { siteConfig } from "../data/site";
 
 const year = new Date().getFullYear();
+const base = import.meta.env.BASE_URL;
+const toHref = (path: string) => `${base}${path}`;
 ---
 
 <footer class="site-footer">
@@ -25,7 +27,7 @@ const year = new Date().getFullYear();
         <h2 class="footer-title">Leistungen</h2>
         <ul class="footer-links">
           {mainNavigation.map((item) => (
-            <li><a href={item.href}>{item.label}</a></li>
+            <li><a href={toHref(item.href)}>{item.label}</a></li>
           ))}
         </ul>
       </section>
@@ -50,7 +52,7 @@ const year = new Date().getFullYear();
       <span>
         {legalNavigation.map((item, index) => (
           <>
-            <a href={item.href}>{item.label}</a>
+            <a href={toHref(item.href)}>{item.label}</a>
             {index < legalNavigation.length - 1 ? " | " : ""}
           </>
         ))}

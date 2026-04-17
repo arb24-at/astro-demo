@@ -13,11 +13,19 @@ type Props = {
 const {
   title,
   description = siteConfig.defaultDescription,
-  canonicalPath = "/"
+  canonicalPath = ""
 } = Astro.props;
 
-const canonicalUrl = new URL(canonicalPath, Astro.site ?? "https://www.berlin-tech-support.de")
-  .toString();
+const base = import.meta.env.BASE_URL;
+const isExternalCanonical =
+  canonicalPath.startsWith("http://") || canonicalPath.startsWith("https://");
+const normalizedCanonicalPath = isExternalCanonical
+  ? canonicalPath
+  : `${base}${canonicalPath.replace(/^\/+/, "")}`;
+const canonicalUrl = isExternalCanonical
+  ? normalizedCanonicalPath
+  : new URL(normalizedCanonicalPath, Astro.site ?? "https://www.berlin-tech-support.de")
+      .toString();
 ---
 
 <!doctype html>

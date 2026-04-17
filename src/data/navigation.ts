@@ -4,14 +4,14 @@ export type NavItem = {
 };
 
 export const mainNavigation: NavItem[] = [
-  { label: "Startseite", href: "/" },
-  { label: "Unternehmen", href: "/leistungen/unternehmen" },
-  { label: "Privatpersonen", href: "/leistungen/privatpersonen" },
-  { label: "Reparatur & Installation", href: "/leistungen/reparatur-installation" },
-  { label: "Datensicherheit", href: "/datensicherheit-zertifizierungen" }
+  { label: "Startseite", href: "" },
+  { label: "Unternehmen", href: "leistungen/unternehmen/" },
+  { label: "Privatpersonen", href: "leistungen/privatpersonen/" },
+  { label: "System & Software", href: "leistungen/reparatur-installation/" },
+  { label: "Datensicherheit", href: "datensicherheit-zertifizierungen/" }
 ];
 
 export const legalNavigation: NavItem[] = [
-  { label: "Impressum", href: "/impressum" },
-  { label: "Datenschutzerklaerung", href: "/datenschutz" }
+  { label: "Impressum", href: "impressum/" },
+  { label: "Datenschutzerklaerung", href: "datenschutz/" }
 ];
