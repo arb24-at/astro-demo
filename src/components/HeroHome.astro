@@ -1,0 +1,60 @@
+---
+import { siteConfig } from "../data/site";
+---
+
+<section class="hero">
+  <div class="container hero-grid">
+    <section class="hero-main">
+      <span class="eyebrow">Vor-Ort-Service fuer Privat & Business</span>
+      <h1 class="hero-title">Schneller IT-Support in Berlin, wenn Technik nicht warten kann</h1>
+      <p class="hero-copy">
+        Wir unterstuetzen Sie bei IT-Stoerungen im Alltag und im Unternehmen: von Microsoft 365
+        ueber WLAN und Arbeitsplatzsysteme bis zur strukturierten Fehlerbehebung vor Ort.
+      </p>
+      <div class="btn-row hero-cta-row">
+        <a class="btn btn-primary" href="#kontakt">Jetzt Termin vereinbaren</a>
+        <a class="btn btn-secondary" href="#kontakt">IT-Notaufnahme kontaktieren</a>
+      </div>
+
+      <div class="hero-signal-row">
+        <article class="signal-chip">
+          <strong>Microsoft Certified</strong>
+          <span>Zertifizierte Techniker fuer Microsoft-Umgebungen</span>
+        </article>
+        <article class="signal-chip">
+          <strong>DSGVO-konform</strong>
+          <span>Dokumentierte, sichere Datenprozesse</span>
+        </article>
+      </div>
+
+      <div class="district-list" aria-label="Servicebezirke">
+        {siteConfig.serviceDistricts.map((district) => <span class="district-pill">{district}</span>)}
+      </div>
+    </section>
+
+    <aside class="hero-panel hero-panel-premium">
+      <p class="hero-panel-kicker">IT-Notaufnahme Berlin</p>
+      <h2 class="panel-title">Was Sie von uns erwarten duerfen</h2>
+
+      <div class="hero-step-list">
+        <article class="hero-step">
+          <span class="hero-step-index">01</span>
+          <p>Erstaufnahme Ihres Problems mit klarer Priorisierung.</p>
+        </article>
+        <article class="hero-step">
+          <span class="hero-step-index">02</span>
+          <p>Direkte Vor-Ort- oder Remote-Unterstuetzung ohne Umwege.</p>
+        </article>
+        <article class="hero-step">
+          <span class="hero-step-index">03</span>
+          <p>Saubere Loesung mit nachvollziehbarer Abschlusskommunikation.</p>
+        </article>
+      </div>
+
+      <div class="hero-highlight">
+        <strong>Servicefenster in Berlin:</strong>
+        <p>Termine fuer Mitte, Pankow, Charlottenburg und Kreuzberg priorisiert verfuegbar.</p>
+      </div>
+    </aside>
+  </div>
+</section>

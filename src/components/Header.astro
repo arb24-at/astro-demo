@@ -1,0 +1,90 @@
+---
+import { mainNavigation } from "../data/navigation";
+import { siteConfig } from "../data/site";
+
+type Props = {
+  currentPath?: string;
+};
+
+const { currentPath = "/" } = Astro.props;
+const headerNavigation = mainNavigation.filter(
+  (item) => item.href !== "/datensicherheit-zertifizierungen"
+);
+
+const isActive = (href: string) => {
+  if (href === "/") return currentPath === "/";
+  return currentPath.startsWith(href);
+};
+---
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <div class="header-shell">
+      <a href="/" class="brand" aria-label={`${siteConfig.name} Startseite`}>
+        <span class="brand-mark">IT</span>
+        <span>
+          <span class="brand-name">{siteConfig.shortName}</span>
+          <span class="brand-subline">{siteConfig.tagline}</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Hauptnavigation">
+        {headerNavigation.map((item) => (
+          <a class={`nav-link ${isActive(item.href) ? "active" : ""}`} href={item.href}>
+            {item.label}
+          </a>
+        ))}
+        <a class="btn btn-primary nav-cta" href="/#kontakt">Jetzt Termin vereinbaren</a>
+      </nav>
+
+      <button
+        id="mobile-toggle"
+        class="mobile-toggle"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Menue oeffnen"
+      >
+        ☰
+      </button>
+    </div>
+
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile Navigation" hidden>
+      {headerNavigation.map((item) => (
+        <a class={`mobile-link ${isActive(item.href) ? "active" : ""}`} href={item.href}>
+          {item.label}
+        </a>
+      ))}
+      <a class="btn btn-primary" href="/#kontakt">Jetzt Termin vereinbaren</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById("site-header");
+  const toggle = document.getElementById("mobile-toggle");
+  const menu = document.getElementById("mobile-menu");
+
+  const handleScroll = () => {
+    if (!header) return;
+    if (window.scrollY > 8) header.classList.add("is-scrolled");
+    else header.classList.remove("is-scrolled");
+  };
+
+  handleScroll();
+  window.addEventListener("scroll", handleScroll);
+
+  toggle?.addEventListener("click", () => {
+    if (!menu) return;
+    const isHidden = menu.hasAttribute("hidden");
+    if (isHidden) menu.removeAttribute("hidden");
+    else menu.setAttribute("hidden", "hidden");
+    toggle.setAttribute("aria-expanded", isHidden ? "true" : "false");
+  });
+
+  menu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menu.setAttribute("hidden", "hidden");
+      toggle?.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>

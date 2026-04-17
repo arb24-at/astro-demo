@@ -1,0 +1,75 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import HeroHome from "../components/HeroHome.astro";
+import TrustBar from "../components/TrustBar.astro";
+import ServiceCards from "../components/ServiceCards.astro";
+import FaqSection from "../components/FaqSection.astro";
+import ContactSection from "../components/ContactSection.astro";
+import { siteConfig } from "../data/site";
+---
+
+<MainLayout
+  title={`IT Support Berlin fuer Privat & Business | ${siteConfig.defaultTitleSuffix}`}
+  description="Professioneller IT Support in Berlin mit Vor-Ort-Service fuer Privatkunden und Unternehmen. Microsoft Certified Techniker, sichere Prozesse und schnelle Hilfe."
+  canonicalPath="/"
+>
+  <HeroHome />
+  <TrustBar />
+  <ServiceCards />
+
+  <section class="section section-soft">
+    <div class="container two-grid">
+      <section>
+        <span class="eyebrow">Arbeitsweise</span>
+        <h2 class="section-title">Klare Schritte statt unklarer Technikprozesse</h2>
+        <p class="section-lead">
+          Vom Erstkontakt bis zur Uebergabe arbeiten wir in einem nachvollziehbaren Ablauf. So
+          wissen Sie zu jedem Zeitpunkt, was als Naechstes passiert.
+        </p>
+      </section>
+
+      <section class="three-grid">
+        <article class="card">
+          <h3>1. Anliegen aufnehmen</h3>
+          <p>Wir klaeren Symptom, Dringlichkeit, betroffene Systeme und den passenden Einsatztyp.</p>
+        </article>
+        <article class="card">
+          <h3>2. Strukturierte Behebung</h3>
+          <p>Vor Ort oder remote setzen wir priorisierte Massnahmen fuer eine stabile Loesung um.</p>
+        </article>
+        <article class="card">
+          <h3>3. Sicher abschliessen</h3>
+          <p>Sie erhalten eine klare Zusammenfassung inklusive Empfehlungen fuer den laufenden Betrieb.</p>
+        </article>
+      </section>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-grid">
+      <section>
+        <span class="eyebrow">Lokale Sichtbarkeit</span>
+        <h2 class="section-title">IT-Support in Berlin mit echtem Vor-Ort-Fokus</h2>
+        <p class="section-lead">
+          Unsere Einsaetze konzentrieren sich auf Berliner Bezirke wie Mitte, Pankow,
+          Charlottenburg, Kreuzberg, Neukoelln und Friedrichshain. Das staerkt die lokale
+          Auffindbarkeit und reduziert Reaktionszeiten.
+        </p>
+      </section>
+      <aside class="feature-rail">
+        <h3 style="margin-top: 0;">Warum dieser Berlin-Bezug wichtig ist</h3>
+        <ul>
+          <li>Relevant fuer Suchanfragen wie "IT Support Berlin" oder "Computerhilfe in Mitte".</li>
+          <li>Vertrauen durch realistische Vor-Ort-Erreichbarkeit.</li>
+          <li>Klare Positionierung fuer Privatkunden und Unternehmen in derselben Region.</li>
+        </ul>
+        <div class="district-list">
+          {siteConfig.serviceDistricts.map((district) => <span class="district-pill">{district}</span>)}
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <FaqSection />
+  <ContactSection />
+</MainLayout>

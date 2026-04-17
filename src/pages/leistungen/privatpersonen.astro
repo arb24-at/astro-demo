@@ -1,0 +1,109 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import { siteConfig } from "../../data/site";
+---
+
+<MainLayout
+  title={`IT-Service fuer Privatpersonen in Berlin | ${siteConfig.defaultTitleSuffix}`}
+  description="Vor-Ort IT-Service fuer Privatkunden in Berlin: PC- und Laptop-Reparatur, WLAN-Einrichtung, Malware-Entfernung und Smart-Home-Fehlerbehebung."
+  canonicalPath="/leistungen/privatpersonen"
+>
+  <section class="page-intro">
+    <div class="container">
+      <span class="eyebrow">Privatkunden</span>
+      <h1 class="section-title">IT-Service fuer Privatpersonen in Berlin</h1>
+      <p class="section-lead">
+        Wenn Computer, WLAN oder Smart-Home nicht wie erwartet funktionieren, erhalten Sie
+        verstaendliche und schnelle Hilfe direkt vor Ort in Berlin.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container card-grid">
+      <article class="card">
+        <h3>PC- und Laptop-Reparatur</h3>
+        <p>
+          Analyse und Behebung bei Startproblemen, Leistungseinbruch, Treiberfehlern und
+          Hardwareauffaelligkeiten.
+        </p>
+        <ul>
+          <li>Diagnose von Defekten und Stabilitaetsproblemen</li>
+          <li>Systembereinigung und Performance-Optimierung</li>
+          <li>Unterstuetzung bei Datenrettung im Rahmen der Moeglichkeiten</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>WLAN-Setup und Heimnetz</h3>
+        <p>
+          Wir optimieren Funkabdeckung, Router-Konfiguration und Geraeteverbindungen fuer einen
+          stabilen Alltag im Homeoffice und Zuhause.
+        </p>
+        <ul>
+          <li>Router, Mesh, Repeater und sichere Passwortstrategie</li>
+          <li>Drucker- und Smart-TV-Einbindung ins Heimnetz</li>
+          <li>Messung von Schwachstellen in Wohnung oder Haus</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Malware und Sicherheitsprobleme</h3>
+        <p>
+          Bei Schadsoftware, verdaechtigen Meldungen oder Kontoproblemen handeln wir strukturiert
+          und priorisieren den Schutz Ihrer Daten.
+        </p>
+        <ul>
+          <li>Systempruefung und Entfernen von Bedrohungen</li>
+          <li>Update- und Schutzkonzept fuer Betriebssysteme</li>
+          <li>Basisschutz fuer Konten, Browser und E-Mail</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container two-grid">
+      <section>
+        <span class="eyebrow">Smart Home</span>
+        <h2 class="section-title">Stoerungen im Smart Home pragmatisch beheben</h2>
+        <p class="section-lead">
+          Bei Problemen mit Sprachassistenten, Hubs, Kameras, Steckdosen oder
+          Automatisierungsablaeufen sorgen wir fuer eine stabile und sichere Basis.
+        </p>
+        <ul>
+          <li>Fehleranalyse bei unzuverlaessigen Routinen</li>
+          <li>Neuverbinden und Strukturieren von Geraetegruppen</li>
+          <li>Absicherung des Heimnetz-Zugangs fuer IoT-Komponenten</li>
+        </ul>
+      </section>
+
+      <aside class="feature-rail">
+        <h3 style="margin-top: 0;">Vor-Ort in Berliner Kiezen</h3>
+        <p style="margin-top: 0.4rem; color: var(--ink-700);">
+          Wir sind regelmaessig in Mitte, Prenzlauer Berg, Kreuzberg, Charlottenburg, Pankow und
+          Neukoelln unterwegs.
+        </p>
+        <div class="district-list">
+          {siteConfig.serviceDistricts.map((district) => <span class="district-pill">{district}</span>)}
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="feature-rail">
+        <h2 style="margin-top: 0;">Direkt Hilfe anfragen</h2>
+        <p>
+          Vereinbaren Sie einen Vor-Ort-Termin fuer Ihren Haushalt oder kontaktieren Sie unsere
+          IT-Notaufnahme bei akuten Stoerungen.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="/#kontakt">Jetzt Termin vereinbaren</a>
+          <a class="btn btn-secondary" href="/#kontakt">IT-Notaufnahme kontaktieren</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

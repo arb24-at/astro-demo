@@ -1,0 +1,95 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import CertificationBadges from "../components/CertificationBadges.astro";
+import { siteConfig } from "../data/site";
+---
+
+<MainLayout
+  title={`Datensicherheit & Zertifizierungen | ${siteConfig.defaultTitleSuffix}`}
+  description="Warum Microsoft Certified Standards und DSGVO-konforme Prozesse fuer IT-Service in Berlin entscheidend sind."
+  canonicalPath="/datensicherheit-zertifizierungen"
+>
+  <section class="page-intro">
+    <div class="container">
+      <span class="eyebrow">Sicherheit & Vertrauen</span>
+      <h1 class="section-title">Datensicherheit & Zertifizierungen</h1>
+      <p class="section-lead">
+        IT-Support bedeutet Zugriff auf sensible Systeme. Deshalb sind Zertifizierungen und ein
+        klarer Datenschutzprozess keine Option, sondern Grundvoraussetzung.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-grid">
+      <article class="card">
+        <h2 style="margin-top: 0;">Warum "Microsoft Certified" relevant ist</h2>
+        <p>
+          Microsoft-Zertifizierungen bestaetigen, dass Techniker nach anerkannten Standards in
+          Bereichen wie Microsoft 365, Endpoint-Management und Cloud-Diensten arbeiten.
+        </p>
+        <ul>
+          <li>Strukturiertes Vorgehen statt trial-and-error</li>
+          <li>Bessere Qualitaet bei Einrichtung, Migration und Fehleranalyse</li>
+          <li>Hoehere Sicherheit in produktiven Arbeitsumgebungen</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2 style="margin-top: 0;">Verpflichtung auf professionelle Standards</h2>
+        <p>
+          Neben Microsoft-Kompetenz setzen wir auf ergaenzende Industrie-Standards in den Bereichen
+          Datensicherheit, Dokumentation und Betriebssicherheit.
+        </p>
+        <ul>
+          <li>Transparente Kommunikation zu Zugriffen und Aenderungen</li>
+          <li>Nachvollziehbares Vorgehen bei sensiblen Daten</li>
+          <li>Wartbare Loesungen fuer langfristige Stabilitaet</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container two-grid">
+      <section>
+        <span class="eyebrow">DSGVO-konforme Arbeitsweise</span>
+        <h2 class="section-title">Sicherer Umgang mit Kunden- und Unternehmensdaten</h2>
+        <p class="section-lead">
+          Ob Privatkunde in Kreuzberg oder Unternehmen in Charlottenburg: wir behandeln Daten nur
+          zweckgebunden, minimieren Zugriffe und arbeiten mit klaren Verantwortlichkeiten.
+        </p>
+        <ul>
+          <li>Zugriff nur fuer den jeweiligen Supportzweck</li>
+          <li>Datensparsame und zeitlich begrenzte Verarbeitung</li>
+          <li>Protokollierbare Arbeitsschritte fuer hoehere Transparenz</li>
+        </ul>
+      </section>
+
+      <aside class="feature-rail">
+        <h3 style="margin-top: 0;">Trust-Badges im Footer aller Seiten</h3>
+        <p style="margin-top: 0.3rem; color: var(--ink-700);">
+          In der Konzeptphase nutzen wir Platzhalter. Diese werden spaeter durch echte Logos und
+          Zertifikatsnachweise ersetzt.
+        </p>
+        <CertificationBadges />
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="feature-rail">
+        <h2 style="margin-top: 0;">Sicherheitsfragen direkt besprechen</h2>
+        <p>
+          Wenn Sie Anforderungen zu Datenschutz, Microsoft 365 oder sicherer Infrastruktur haben,
+          stimmen wir den passenden Supportprozess mit Ihnen ab.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="/#kontakt">Jetzt Termin vereinbaren</a>
+          <a class="btn btn-secondary" href="/#kontakt">IT-Notaufnahme kontaktieren</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,108 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import { siteConfig } from "../../data/site";
+---
+
+<MainLayout
+  title={`IT-Loesungen fuer Unternehmen in Berlin | ${siteConfig.defaultTitleSuffix}`}
+  description="Business IT Support in Berlin fuer kleine und mittlere Unternehmen: Infrastruktur, Microsoft 365, Netzwerkstabilitaet, Server, Drucker, VoIP und DSGVO-konforme Prozesse."
+  canonicalPath="/leistungen/unternehmen"
+>
+  <section class="page-intro">
+    <div class="container">
+      <span class="eyebrow">Business IT</span>
+      <h1 class="section-title">IT-Loesungen fuer Unternehmen in Berlin</h1>
+      <p class="section-lead">
+        Wir betreuen kleine und mittlere Unternehmen mit einem Fokus auf stabile
+        Buero-Infrastruktur, klare Prozesse und sichere Datenverarbeitung.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container card-grid">
+      <article class="card">
+        <h3>Infrastruktur fuer den Arbeitsalltag</h3>
+        <p>
+          Einrichtung und Betrieb von Arbeitsplatzsystemen, Druckumgebungen, Dateifreigaben,
+          lokalen Servern und VoIP-Strukturen.
+        </p>
+        <ul>
+          <li>Arbeitsplatz-Rollouts inklusive Benutzer- und Rechtekonzept</li>
+          <li>Druckerlandschaften fuer Teams und Abteilungen</li>
+          <li>Standortnetzwerke mit nachvollziehbarer Segmentierung</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Microsoft 365 & Softwareintegration</h3>
+        <p>
+          Wir begleiten Sie bei Outlook, Teams, SharePoint und OneDrive inklusive sauberer
+          Client-Einbindung auf den Endgeraeten.
+        </p>
+        <ul>
+          <li>Tenant-nahe Einrichtung und Benutzerverwaltung</li>
+          <li>Praxisorientierte Richtlinien fuer Collaboration</li>
+          <li>Fehlerbehebung bei Sync-, Lizenz- und Zugriffsthemen</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Netzwerkstabilitaet & Betriebssicherheit</h3>
+        <p>
+          Stabile Verbindungen und reproduzierbare Performance sind die Basis fuer produktive Teams.
+        </p>
+        <ul>
+          <li>WLAN-Design fuer Bueroetagen und Besprechungsraeume</li>
+          <li>Monitoring-nahe Stoerungsanalyse und Priorisierung</li>
+          <li>Reduzierung wiederkehrender Ausfallursachen</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container two-grid">
+      <section>
+        <span class="eyebrow">Datensicherheit</span>
+        <h2 class="section-title">Sichere Prozesse fuer sensible Unternehmensdaten</h2>
+        <p class="section-lead">
+          Jeder Einsatz folgt einem klaren Sicherheitsrahmen: minimale Rechte, nachvollziehbare
+          Schritte und DSGVO-konforme Datenbehandlung.
+        </p>
+        <ul>
+          <li>Kontrollierte Zugriffe auf E-Mail, Dokumente und Admin-Bereiche</li>
+          <li>Transparente Kommunikation bei Aenderungen an produktiven Systemen</li>
+          <li>Technische Basis-Haertung fuer Endgeraete und Konten</li>
+        </ul>
+      </section>
+
+      <aside class="feature-rail">
+        <h3 style="margin-top: 0;">Servicegebiet Berlin fuer Unternehmen</h3>
+        <p style="margin-top: 0.4rem; color: var(--ink-700);">
+          Wir betreuen Teams in Mitte, Pankow, Charlottenburg, Kreuzberg, Wilmersdorf und
+          Friedrichshain mit planbaren Vor-Ort-Terminen.
+        </p>
+        <div class="district-list">
+          {siteConfig.serviceDistricts.map((district) => <span class="district-pill">{district}</span>)}
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="feature-rail">
+        <h2 style="margin-top: 0;">Naechster Schritt</h2>
+        <p>
+          Besprechen Sie Ihren Bedarf fuer IT-Betreuung, Migration oder Stabilisierung Ihrer
+          Infrastruktur mit unserem Team.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="/#kontakt">Jetzt Termin vereinbaren</a>
+          <a class="btn btn-secondary" href="/#kontakt">IT-Notaufnahme kontaktieren</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

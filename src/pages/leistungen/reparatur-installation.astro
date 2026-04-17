@@ -1,0 +1,86 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import { siteConfig } from "../../data/site";
+---
+
+<MainLayout
+  title={`Reparatur & Installation in Berlin | ${siteConfig.defaultTitleSuffix}`}
+  description="Hardware- und Software-Service in Berlin: Komponentenreparatur, Peripherie, Betriebssysteme, Office-Suiten und Fachanwendungen inklusive strukturierter Inbetriebnahme."
+  canonicalPath="/leistungen/reparatur-installation"
+>
+  <section class="page-intro">
+    <div class="container">
+      <span class="eyebrow">Hardware & Software</span>
+      <h1 class="section-title">Reparatur & Installation in Berlin</h1>
+      <p class="section-lead">
+        Wir reparieren, installieren und konfigurieren Systeme fuer Privatkunden und Unternehmen -
+        mit klaren Schritten und sauberer Funktionspruefung.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-grid">
+      <article class="card">
+        <h2 style="margin-top: 0;">Hardware-Reparatur und Peripherie</h2>
+        <p>
+          Wir kuemmern uns um typische Hardwarethemen von Einzelkomponenten bis zur Einbindung von
+          Arbeitsplatz-Peripherie.
+        </p>
+        <ul>
+          <li>Austausch von SSD, RAM, Netzteilen und defekten Peripheriekomponenten</li>
+          <li>Fehlerdiagnose bei Dockingstations, Monitoren und Druckern</li>
+          <li>Router- und Switch-Konfiguration fuer Heimnetz und kleine Bueroeinheiten</li>
+          <li>Funktionskontrolle nach Reparatur inklusive Performance-Check</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2 style="margin-top: 0;">Software-Setup und Troubleshooting</h2>
+        <p>
+          Von Betriebssystemen bis Fachtools integrieren wir Software in bestehende Umgebungen und
+          beheben reproduzierbar Fehler.
+        </p>
+        <ul>
+          <li>Windows-Installation, Systemmigration und Benutzerprofile</li>
+          <li>Microsoft 365, Outlook, Teams und Office-Anwendungsprobleme</li>
+          <li>Einbindung spezialisierter Programme fuer Praxis- oder Bueroablauf</li>
+          <li>Treiber, Updates, Lizenzpruefung und Stabilitaetsoptimierung</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container three-grid">
+      <article class="card">
+        <h3>1. Analyse</h3>
+        <p>Wir erfassen Ursache, Auswirkungen und Prioritaet des Problems.</p>
+      </article>
+      <article class="card">
+        <h3>2. Umsetzung</h3>
+        <p>Reparatur oder Installation mit abgestimmten Massnahmen und Dokumentation.</p>
+      </article>
+      <article class="card">
+        <h3>3. Uebergabe</h3>
+        <p>Abnahme mit Funktionsnachweis und Empfehlungen fuer den stabilen Betrieb.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="feature-rail">
+        <h2 style="margin-top: 0;">Reparaturtermin in Berlin vereinbaren</h2>
+        <p>
+          Ob in Mitte, Pankow, Charlottenburg oder Kreuzberg: Wir planen Ihren Einsatz schnell und
+          transparent.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="/#kontakt">Jetzt Termin vereinbaren</a>
+          <a class="btn btn-secondary" href="/#kontakt">IT-Notaufnahme kontaktieren</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,25 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { siteConfig } from "../data/site";
+---
+
+<MainLayout
+  title={`Seite nicht gefunden | ${siteConfig.defaultTitleSuffix}`}
+  description="Die angeforderte Seite konnte nicht gefunden werden."
+  canonicalPath="/404"
+>
+  <section class="page-intro">
+    <div class="container">
+      <span class="eyebrow">404</span>
+      <h1 class="section-title">Diese Seite wurde nicht gefunden</h1>
+      <p class="section-lead">
+        Bitte wechseln Sie zur Startseite oder gehen Sie direkt zu den IT-Leistungen fuer
+        Privatkunden und Unternehmen.
+      </p>
+      <div class="btn-row" style="margin-top: 1rem;">
+        <a class="btn btn-primary" href="/">Zur Startseite</a>
+        <a class="btn btn-secondary" href="/leistungen/unternehmen">Zu den Business-Leistungen</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

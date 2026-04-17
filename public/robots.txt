@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.berlin-tech-support.de/sitemap-index.xml
