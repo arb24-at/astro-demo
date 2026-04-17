@@ -1,5 +1,6 @@
-import { defineConfig } from "astro/config";
+import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: "https://www.berlin-tech-support.de"
+  site: 'https://arb24-at.github.io',
+  base: '/astro-demo',
 });
